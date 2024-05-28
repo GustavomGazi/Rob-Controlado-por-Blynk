@@ -1,34 +1,36 @@
-### Documentação do Código: Carrinho Robô Controlado por Blynk
+---
 
-#### Descrição
-Este código controla um carrinho robô utilizando um ESP32 e o aplicativo Blynk através de conexão Wi-Fi. O carrinho pode ser controlado remotamente utilizando um joystick virtual no aplicativo Blynk.
+## Documentação do Código: Carrinho Robô Controlado por Blynk
 
-#### Pré-requisitos
+### Descrição
+O projeto visa desenvolver um carrinho de controle remoto utilizando o microcontrolador ESP32, que é controlado via Wi-fi. O principal objetivo é aplicar conceitos de Internet das Coisas (IoT) para criar um veículo robótico que possa ser operado remotamente através de um aplicativo de smartphone. O carrinho será construído sobre um chassi Arduino 2WD e utilizará um módulo Driver Ponte H para o controle de movimentação. Este projeto não só servirá como uma excelente ferramenta de aprendizado prático para a equipe em tecnologias emergentes de IoT, mas também proporcionará uma base para futuras inovações e implementações em automação e robótica.
+
+### Componentes
+- **Microcontrolador:** ESP32
+- **Driver de Motor:** Ponte H (ou outro driver de motor compatível)
+- **Motores:** Motores DC com caixa de redução
+- **Alimentação:** Bateria para os motores
+
+### Pré-requisitos
 - ESP32 (ou outro microcontrolador compatível com WiFi e PWM)
 - Aplicativo Blynk instalado em um dispositivo móvel
 - Conexão com uma rede Wi-Fi
-- Blynk Auth Token e credenciais de rede Wi-Fi configuradas no código
+- Token de Autenticação do Blynk e credenciais de rede Wi-Fi configuradas no código
 
-#### Componentes
-- ESP32
-- Ponte H (ou outro driver de motor compatível)
-- Motores DC com caixa de redução
-- Bateria para alimentação dos motores
+### Pinagem do ESP32
+- **MOTOR1_IN1:** GPIO 33
+- **MOTOR1_IN2:** GPIO 32
+- **MOTOR2_IN1:** GPIO 25
+- **MOTOR2_IN2:** GPIO 26
 
-#### Pinagem do ESP32
-- MOTOR1_IN1: GPIO 33
-- MOTOR1_IN2: GPIO 32
-- MOTOR2_IN1: GPIO 25
-- MOTOR2_IN2: GPIO 26
-
-#### Bibliotecas Utilizadas
+### Bibliotecas Utilizadas
 - WiFi.h: Para conexão Wi-Fi
 - BlynkSimpleEsp32.h: Para integração com o Blynk
 
-#### Instruções de Uso
+### Instruções de Uso
 1. **Configuração Inicial:**
-   - Defina o Token de Autenticação (BLYNK_AUTH_TOKEN), SSID (nome da sua rede Wi-Fi) e senha (pass) no início do código.
-   
+   - Insira o Token de Autenticação do Blynk, SSID (nome da sua rede Wi-Fi) e senha (pass) no início do código.
+
    ```cpp
    #define BLYNK_TEMPLATE_ID ""
    #define BLYNK_TEMPLATE_NAME "Carrinho robô"
@@ -45,7 +47,7 @@ Este código controla um carrinho robô utilizando um ESP32 e o aplicativo Blynk
 
 2. **Inicialização dos Motores:**
    - Configure os pinos dos motores como saídas e inicialize o PWM para cada pino.
-   
+
    ```cpp
    void setup() {
      Serial.begin(9600);
@@ -138,20 +140,22 @@ Este código controla um carrinho robô utilizando um ESP32 e o aplicativo Blynk
    }
    ```
 
-#### Funcionamento
+### Funcionamento
 - O carrinho robô é controlado pelos valores de x e y recebidos através do aplicativo Blynk.
 - Movimentos possíveis são para frente, para trás, para a esquerda, para a direita e parar.
 - Os movimentos são controlados através do ajuste dos sinais PWM para os motores.
 
-#### Exemplo de Aplicativo Blynk
+### Exemplo de Aplicativo Blynk
 - No aplicativo Blynk, adicione três widgets do tipo `Joystick`:
   - Widget V0: Controla o eixo x (de 0 a 100)
   - Widget V1: Controla o eixo y (de 0 a 100)
   - Widget V2: Controla a velocidade (de 0 a 255)
 
-#### Observações
+### Observações
 - Certifique-se de configurar corretamente o projeto no Blynk e que o token de autenticação e as credenciais de Wi-Fi estejam corretas.
 - Ajuste os valores de x, y e Speed no aplicativo Blynk para controlar o movimento do carrinho robô.
 
-#### Conclusão
+### Conclusão
 Este código proporciona uma base para controlar um carrinho robô via Wi-Fi usando o ESP32 e o aplicativo Blynk. Ele pode ser expandido para incluir mais funcionalidades, como sensores adicionais ou um controle mais refinado dos motores.
+
+---
