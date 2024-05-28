@@ -5,6 +5,8 @@
 ### Descrição
 O projeto visa desenvolver um carrinho de controle remoto utilizando o microcontrolador ESP32, que é controlado via Wi-fi. O principal objetivo é aplicar conceitos de Internet das Coisas (IoT) para criar um veículo robótico que possa ser operado remotamente através de um aplicativo de smartphone. O carrinho será construído sobre um chassi Arduino 2WD e utilizará um módulo Driver Ponte H para o controle de movimentação. Este projeto não só servirá como uma excelente ferramenta de aprendizado prático para a equipe em tecnologias emergentes de IoT, mas também proporcionará uma base para futuras inovações e implementações em automação e robótica.
 
+![Organização e Produtividade - IOT](https://github.com/GaziGustavo/Rob-Controlado-por-Blynk/assets/167039486/7f17f3a6-312d-4562-a425-1feaa7064eaa)
+
 ### Componentes
 - **Microcontrolador:** ESP32
 - **Driver de Motor:** Ponte H (ou outro driver de motor compatível)
